@@ -1,0 +1,265 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Happy Birthday Sai Bhavana!</title>
+    <style>
+        :root {
+            --primary-pink: #ff6b8b;
+            --soft-pink: #ff8da1;
+            --gold: #ffd700;
+            --dark-text: #2d3436;
+            --bg-gradient: linear-gradient(135deg, #ffeef8 0%, #ffd6e8 100%);
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        body {
+            background: var(--bg-gradient);
+            color: var(--dark-text);
+            min-height: 100vh;
+            overflow-x: hidden;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        /* Floating Hearts Animation */
+        .hearts {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: -1;
+            pointer-events: none;
+        }
+
+        .heart {
+            position: absolute;
+            bottom: -20px;
+            background-color: var(--soft-pink);
+            display: inline-block;
+            height: 20px;
+            margin: 0 10px;
+            transform: rotate(-45deg);
+            width: 20px;
+            animation: float 6s infinite linear;
+            opacity: 0.6;
+        }
+
+        .heart:before, .heart:after {
+            content: "";
+            background-color: var(--soft-pink);
+            border-radius: 50%;
+            height: 20px;
+            position: absolute;
+            width: 20px;
+        }
+
+        .heart:before { top: -10px; left: 0; }
+        .heart:after { left: 10px; top: 0; }
+
+        @keyframes float {
+            0% { transform: translateY(0) rotate(-45deg); opacity: 0; }
+            50% { opacity: 0.7; }
+            100% { transform: translateY(-100vh) rotate(-45deg); opacity: 0; }
+        }
+
+        .container {
+            max-width: 800px;
+            width: 90%;
+            margin: 40px auto;
+            text-align: center;
+        }
+
+        header h1 {
+            font-size: 2.5rem;
+            color: var(--primary-pink);
+            margin-bottom: 10px;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.1);
+        }
+
+        .subtitle {
+            font-size: 1.1rem;
+            color: #666;
+            font-style: italic;
+            margin-bottom: 30px;
+        }
+
+        .card {
+            background: white;
+            padding: 30px 20px;
+            border-radius: 20px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+            margin-bottom: 30px;
+            text-align: center;
+        }
+
+        .profile-pic {
+            width: 130px;
+            height: 130px;
+            border-radius: 50%;
+            border: 5px solid white;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+            object-fit: cover;
+            margin-bottom: 20px;
+        }
+
+        p.message {
+            font-size: 1.1rem;
+            line-height: 1.7;
+            color: #444;
+            margin-bottom: 25px;
+        }
+
+        /* Buttons */
+        .btn {
+            display: inline-block;
+            padding: 12px 28px;
+            background: var(--primary-pink);
+            color: white;
+            text-decoration: none;
+            border-radius: 25px;
+            font-weight: bold;
+            box-shadow: 0 5px 15px rgba(255, 107, 139, 0.3);
+            transition: transform 0.2s, background 0.3s;
+            border: none;
+            cursor: pointer;
+            font-size: 1rem;
+        }
+
+        .btn:hover {
+            background: #e05271;
+            transform: scale(1.03);
+        }
+
+        .btn-share {
+            background: #4a90e2;
+            box-shadow: 0 5px 15px rgba(74, 144, 226, 0.3);
+            margin-top: 10px;
+        }
+        .btn-share:hover { background: #357abd; }
+
+        /* HTML Comment Box Styling Overrides */
+        #HCB_comment_box {
+            text-align: left;
+            padding: 5px;
+        }
+        #HCB_comment_box h3 {
+            color: var(--primary-pink) !important;
+            font-family: inherit;
+            font-size: 1.3rem !important;
+            margin-bottom: 15px;
+        }
+        .hcb-link, #HCB_comment_box a {
+            color: var(--primary-pink) !important;
+        }
+        #HCB_comment_box .btn-primary {
+            background-color: var(--primary-pink) !important;
+            border-color: var(--primary-pink) !important;
+            border-radius: 20px;
+            font-weight: bold;
+            padding: 8px 20px;
+        }
+        #HCB_comment_box .btn-primary:hover {
+            background-color: #e05271 !important;
+        }
+        #HCB_comment_box textarea {
+            border-radius: 10px;
+            border: 2px solid #ffe1ec;
+            width: 100% !important;
+        }
+        #HCB_comment_box textarea:focus {
+            border-color: var(--primary-pink) !important;
+            box-shadow: 0 0 8px rgba(255, 107, 139, 0.2) !important;
+        }
+        .comment {
+            background: #fff9fb !important;
+            border-left: 5px solid var(--primary-pink) !important;
+            border-radius: 8px !important;
+            padding: 12px !important;
+            margin-bottom: 15px !important;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.02) !important;
+        }
+
+        footer {
+            margin-top: 40px;
+            padding: 20px;
+            font-size: 0.9rem;
+            color: #888;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="hearts" id="hearts-container"></div>
+
+    <div class="container">
+        <header>
+            <h1>✨ Happy Birthday, Sai Bhavana! ✨</h1>
+            <p class="subtitle">The ultimate celebration space</p>
+        </header>
+
+        <!-- Profile Card -->
+        <div class="card">
+            <img src="https://images.unsplash.com/photo-1513151233558-d860c5398176?w=400" alt="Sai Bhavana" class="profile-pic">
+            <p class="message">
+                "May your day be filled with endless smiles, spectacular music, beautiful journeys, and all the love you deserve!"
+            </p>
+            <button class="btn btn-share" onclick="shareWebsite()">🔗 Share Website With Friends</button>
+        </div>
+
+        <!-- HTML Comment Box / Wishes Section -->
+        <div class="card">
+            <h3 style="color: var(--primary-pink); margin-bottom: 20px;">💝 The Birthday Wishes Wall</h3>
+            
+            <!-- begin wwww.htmlcommentbox.com -->
+            <div id="HCB_comment_box"><a href="http://www.htmlcommentbox.com">Comment Form</a> is loading comments...</div>
+            <link rel="stylesheet" type="text/css" href="https://www.htmlcommentbox.com/static/skins/bootstrap/twitter-bootstrap.css?v=0" />
+            <script type="text/javascript" id="hcb"> /*<!--*/ if(!window.hcb_user){hcb_user={};} (function(){var s=document.createElement("script"), l=hcb_user.PAGE || (""+window.location).replace(/'/g,"%27"), h="https://www.htmlcommentbox.com";s.setAttribute("type","text/javascript");s.setAttribute("src", h+"/jread?page="+encodeURIComponent(l).replace("+","%2B")+"&mod=%241%24wq1rdBcg%24jVKrIWZqukwCzPt9fzMCr0"+"&opts=16798&num=10&ts=1784125403126");if (typeof s!="undefined") document.getElementsByTagName("head")[0].appendChild(s);})(); /*-->*/ </script>
+            <!-- end www.htmlcommentbox.com -->
+
+        </div>
+
+        <footer>
+            <p>Created with ❤️ for Sai Bhavana</p>
+        </footer>
+    </div>
+
+    <script>
+        // Setup background animations
+        const heartsContainer = document.getElementById('hearts-container');
+        for (let i = 0; i < 15; i++) {
+            const heart = document.createElement('div');
+            heart.classList.add('heart');
+            heart.style.left = `${Math.random() * 100}%`;
+            heart.style.animationDelay = `${Math.random() * 5}s`;
+            heart.style.animationDuration = `${5 + Math.random() * 5}s`;
+            heart.style.transform = `scale(${0.5 + Math.random() * 0.7}) rotate(-45deg)`;
+            heartsContainer.appendChild(heart);
+        }
+
+        // Native Share API Trigger
+        function shareWebsite() {
+            if (navigator.share) {
+                navigator.share({
+                    title: 'Happy Birthday Sai Bhavana!',
+                    text: 'Check out this birthday site and leave a wish for Sai Bhavana!',
+                    url: window.location.href
+                }).catch(console.error);
+            } else {
+                navigator.clipboard.writeText(window.location.href);
+                alert("Website link copied to clipboard! Share it with friends on WhatsApp or Instagram. 📱");
+            }
+        }
+    </script>
+</body>
+</html>
+
