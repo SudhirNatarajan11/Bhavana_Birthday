@@ -103,13 +103,14 @@
         }
 
         .profile-pic {
-            width: 130px;
-            height: 130px;
-            border-radius: 50%;
+            width: 220px;
+            height: 220px;
+            border-radius: 15px; /* Soft rounded square corners */
             border: 5px solid white;
             box-shadow: 0 5px 15px rgba(0,0,0,0.1);
             object-fit: cover;
             margin-bottom: 20px;
+            max-width: 100%; /* Keeps it fully responsive on mobile */
         }
 
         p.message {
